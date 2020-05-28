@@ -1,0 +1,17 @@
+.series-list {
+    list-style: none;
+    
+}
+
+.series-list li {
+    margin: 5px;
+    background-color: yellow;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.series-list li:hover {
+    transform: scale(1.1);
+    background-color: greenyellow;
+    
+}
