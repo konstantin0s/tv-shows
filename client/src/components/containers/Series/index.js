@@ -32,8 +32,10 @@ axios.get(`http://api.tvmaze.com/search/shows?q=${e.target.value}`)
         const {series, seriesName, isFetching } = this.state;
         return (
             <div>
+
+<SeriesList list={this.state.series} />
            
-           {seriesName.length > 0 && seriesName.trim() === '' 
+           {/* {seriesName.length > 0 && seriesName.trim() === '' 
            && 
            <p>Please enter title name</p> }
 
@@ -47,14 +49,14 @@ axios.get(`http://api.tvmaze.com/search/shows?q=${e.target.value}`)
            {!isFetching &&  
                   <SeriesList list={this.state.series} />
         
-           }
+           } */}
 
-<div>
+{/* <div>
                       <input value={seriesName} 
                        type="text"
                       onChange={this.onSeriesInputChange}
                        />
-                  </div>
+                  </div> */}
               
          
             </div>

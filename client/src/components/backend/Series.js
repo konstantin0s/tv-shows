@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SeriesList from './SeriesList';
 import axios from 'axios';
 
  class Series extends Component {
@@ -17,8 +18,9 @@ import axios from 'axios';
         this.setState((state) => ({ ...state, isLoading: true }));
     
         axios
-          .get(`/`)
+          .get(`/search?limit=10`)
           .then((res) => {
+              console.log(res)
             const tvshows = res.data;
             this.setState({
                 tvshows: tvshows,
@@ -36,7 +38,7 @@ import axios from 'axios';
         console.log(this.state.tvshows);
         return (
             <div>
-                
+                <SeriesList tvshows={this.state.tvshows} />
             </div>
         )
     }
