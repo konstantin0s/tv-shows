@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-// import './css/Gif.css';
+import './css/serieslistitem.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -15,13 +15,7 @@ const SeriesListItem = (props) => {
 
     console.log(props);
     return (
-        // <div>
-        //         <li key={props.series.id}>
-        //         <h2 className="name">{props.series.name}</h2>
-        //         <img className="image" src={props.series.image.medium ? props.series.image.medium : ''} />
-        //         </li>
-        // </div>
-        <div className="child-gif">
+        <div className="child-show">
         <Card className={classes.root}>
           <CardActionArea>
                  <ReactFancyBox className={classes.media} thumbnail={props.series.image.medium ? props.series.image.medium : ''}

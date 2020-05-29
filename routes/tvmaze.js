@@ -20,34 +20,32 @@ router.get('/search', function (req, res, next) {
         },
         withCredentials: true
       };
-      let queryString = 'princess'
   axios.get(`${apiUrl}` , options).then(function (response) {
     // res.send(response.data);
     var body = response.data;
     res.json(body);
     console.log(body)
-    // res.render('locations', {body: body})
   })
 });
 
-// //Search beers by id
-// router.get('/gif/:id', function (req, res, next) {
-//   const options = {
-//     params: {
-//       key: apiKey
-//     },
-//     withCredentials: true
-//   }
-//   axios.get(`${oneGifUrl}/${req.params.id}`, options).then(function (response) {
-//       // res.send(response.data);
-//       // var body = response.data;
-//       var body = response.data.data;
-//       console.log(response.data);
-//       res.json(body);
-//     })
-//     .catch(function (error) {
-//       res.status(404).send();
-//     });
-// });
+// //get tv shows by id
+router.get('/show/:id', function (req, res, next) {
+  const options = {
+    params: {
+      key: apiKey
+    },
+    withCredentials: true
+  }
+  axios.get(`${apiUrl}/${req.params.id}`, options).then(function (response) {
+      // res.send(response.data);
+      // var body = response.data;
+      var body = response.data;
+      console.log(response.data);
+      res.json(body);
+    })
+    .catch(function (error) {
+      res.status(404).send();
+    });
+});
 
 module.exports = router;
