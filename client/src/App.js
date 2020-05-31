@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import Intro from  './components/Intro/Intro';
 import OneShow from './components/backend/OneShow';
 import Series from './components/backend/Series';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Header from './components/backend/Header';
+import Footer from './components/backend/Footer';
 
 export default class App extends Component {
 
@@ -11,10 +12,8 @@ export default class App extends Component {
     return (
 <Router>
 <div className="App">
-<Intro message="Here you can find 
-all of your most loved series
-" />
 
+<Header />
 <Switch>
 <Route exact path="/" component={Series} />
 
@@ -27,7 +26,7 @@ all of your most loved series
               }}
             />
 </Switch>
-
+<Footer />
       </div>
 </Router>
     );

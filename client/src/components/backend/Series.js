@@ -18,10 +18,11 @@ import axios from 'axios';
         this.setState((state) => ({ ...state, isLoading: true }));
     
         axios
-          .get(`/search?limit=10`)
+          .get(`/theshows`)
           .then((res) => {
-              console.log(res)
-            const tvshows = res.data;
+
+            const tvshows = res.data.slice(0, 20);
+            console.log(tvshows)
             this.setState({
                 tvshows: tvshows,
               isLoading: false,

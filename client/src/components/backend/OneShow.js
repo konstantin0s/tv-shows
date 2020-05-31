@@ -41,7 +41,6 @@ class OneShow extends Component {
           .then((res) => {
             const show = res.data;
             console.log(show);
-            console.log(res);
             this.setState({
               show: show,
               isLoading: false,
@@ -62,9 +61,8 @@ class OneShow extends Component {
         // for (let i = 0; i < result.length; i++) {
           return (
             <Box key={Math.random() * 10 - 1} component="fieldset" mb={3} borderColor="transparent">
-              <Typography component="legend">Stars</Typography>
-    
-              <Rating name="read-only" precision={0.5} value={parseInt(starx)} readOnly />
+              <Rating name="read-only" precision={0.5} value={parseInt(starx)} readOnly /> 
+          <h2>{starx}</h2>
             </Box>
           );
         // }
@@ -84,7 +82,8 @@ class OneShow extends Component {
                   <CardActionArea>
                     <CardContent className="image-card">
 
-                      <ReactFancyBox thumbnail={show.image.medium} image={show.image.medium} />
+                      <ReactFancyBox thumbnail={show.image.medium ? show.image.medium : ''} 
+                      image={show.image.medium ? show.image.medium : ''} />
                       <Typography gutterBottom variant="h5" component="h2">
                         Title:
                       </Typography>

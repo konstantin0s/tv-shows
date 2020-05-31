@@ -7,29 +7,35 @@ const apiUrl = process.env.API_URL;
 const apiKey = process.env.API_KEY;
 
 // Example: http://api.tvmaze.com/search/shows?q=girls
-//get all gif by name
+const scheduleUrl = 'http://api.tvmaze.com/schedule';
 
-router.get('/search', function (req, res, next) {
+//get all shows
+router.get('/theshows', function (req, res) {
  
+  let limit = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 20;
     const options = {
         params: {
-          key: apiKey,
-          name: req.query.title || '',
-          p: req.query.page || 1,
-          q: req.query
+          key: apiKey
         },
         withCredentials: true
       };
-  axios.get(`${apiUrl}` , options).then(function (response) {
+  axios.get(`${apiUrl}` , options)
+  .then(function (response) {
     // res.send(response.data);
-    var body = response.data;
-    res.json(body);
-    console.log(body)
+
+    // res.json(body);
+    // console.log(body)
+ let body = response.data;
+//   let body =  response.data.sort(function (a, b) {
+//   return b.weight + b.rating.average - (a.weight + a.rating.average);
+// }).slice(0, limit);
+      res.json(body);
+      console.log(body);
   })
 });
 
 // //get tv shows by id
-router.get('/show/:id', function (req, res, next) {
+router.get('/show/:id', function (req, res) {
   const options = {
     params: {
       key: apiKey
@@ -46,6 +52,24 @@ router.get('/show/:id', function (req, res, next) {
     .catch(function (error) {
       res.status(404).send();
     });
+});
+
+//get today schedule
+router.get('/schedule', function (req, res, next) {
+ 
+  const options = {
+      params: {
+        key: apiKey,
+      },
+      withCredentials: true
+    };
+axios.get(`${scheduleUrl}` , options)
+.then(function (response) {
+  // res.send(response.data);
+  var body = response.data;
+  res.json(body);
+  // console.log(body)
+})
 });
 
 module.exports = router;

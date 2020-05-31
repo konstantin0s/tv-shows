@@ -15,12 +15,18 @@ li {
 .series-list {
     box-sizing: border-box;
     position: relative;
-    width: 100%;
+    width: 70%;
     display: grid;
-    grid-template-columns: repeat(4, 20.2%);
+    grid-template-columns: repeat(4, 24.2%);
     grid-gap: 10px;
     height: 100%;
 }
+
+/* .child-show:first-of-type,
+.child-show:nth-of-type(2),
+.child-show:nth-of-type(3) {
+    width: 70%;
+} */
 
 .child-show {
     position: relative;
