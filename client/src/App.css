@@ -9,7 +9,7 @@ html {
 }
 
 .App {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   text-align: center;
   position: relative;
   width: 100%;

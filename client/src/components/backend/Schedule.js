@@ -20,7 +20,7 @@ class Schedule extends Component {
         axios
             .get(`/schedule`)
             .then((res) => {
-                console.log(res)
+                // console.log(res)
                 const schedule = res.data;
                 this.setState({schedule: schedule, isLoading: false});
             })
@@ -74,7 +74,7 @@ class Schedule extends Component {
     render() {
 
         const {schedule} = this.state;
-        console.log(schedule);
+        // console.log(schedule);
 
         return (
             <div className="schedule">

@@ -1,9 +1,9 @@
 import React from 'react';
-import SeriesListItem from './SeriesListItem';
+import PeopleListItem from './PeopleListItem';
 import Schedule from './Schedule';
 // import './index.css';
 
-const SeriesList = (props) => {
+const PeopleList = (props) => {
     console.log(props.tvshows);
     return (
  
@@ -13,7 +13,7 @@ const SeriesList = (props) => {
             {
            
                     props.tvshows.map(series => (
-                        <SeriesListItem key={series.show.id} series={series} />
+                        <PeopleListItem key={series.person.id} series={series} />
                         ))
              
             }
@@ -22,4 +22,4 @@ const SeriesList = (props) => {
     );
 }
 
-export default SeriesList;
+export default PeopleList;

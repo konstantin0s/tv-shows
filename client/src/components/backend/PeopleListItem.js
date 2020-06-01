@@ -10,29 +10,31 @@ import Typography from '@material-ui/core/Typography';
 import ReactFancyBox from 'react-fancybox';
 import 'react-fancybox/lib/fancybox.css';
 
-const SeriesListItem = (props) => {
+const PeopleListItem = (props) => {
     const classes = useStyles();
 
     console.log(props);
-    const replaceNullImg =  'https://source.unsplash.com/random';
+const replaceNullImg =  'https://source.unsplash.com/random';
     return (
         <div className="child-show">
         <Card className={classes.root}>
           <CardActionArea>
-                 <ReactFancyBox className={classes.media} thumbnail={(!!props.series.show.image) ? props.series.show.image.medium : replaceNullImg}
-                  image={(!!props.series.show.image) ? props.series.show.image.medium : replaceNullImg} />
+
+                     <ReactFancyBox className={classes.media} thumbnail={(!!props.series.person.image)
+                      ?  props.series.person.image.medium :  replaceNullImg}
+                  image={(!!props.series.person.image) ?  props.series.person.image.medium :  replaceNullImg} />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
-                {props.series.show.name}
+                {props.series.person.name}
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-             {props.series.show.type}
+             {props.series.person.type}
               </Typography>
             </CardContent>
           </CardActionArea>
           <CardActions>
     
-            <Link className="linkx" id={props.series.show.id} to={`/show/${props.series.show.id}`}>
+            <Link className="linkx" id={props.series.person.id} to={`/show/${props.series.person.id}`}>
                     See More..
           </Link>
           
@@ -43,7 +45,7 @@ const SeriesListItem = (props) => {
 }
 
 
-export default SeriesListItem;
+export default PeopleListItem;
 
 
 const useStyles = makeStyles({

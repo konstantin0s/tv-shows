@@ -7,7 +7,8 @@ const apiUrl = process.env.API_URL;
 const apiKey = process.env.API_KEY;
 
 // Example: http://api.tvmaze.com/search/shows?q=girls
-const scheduleUrl = 'http://api.tvmaze.com/schedule';
+let scheduleUrl = 'http://api.tvmaze.com/schedule';
+let searchUrl = 'http://api.tvmaze.com/search/show';
 
 //get all shows
 router.get('/theshows', function (req, res) {
@@ -21,16 +22,11 @@ router.get('/theshows', function (req, res) {
       };
   axios.get(`${apiUrl}` , options)
   .then(function (response) {
-    // res.send(response.data);
 
-    // res.json(body);
-    // console.log(body)
  let body = response.data;
-//   let body =  response.data.sort(function (a, b) {
-//   return b.weight + b.rating.average - (a.weight + a.rating.average);
-// }).slice(0, limit);
+
       res.json(body);
-      console.log(body);
+
   })
 });
 
@@ -46,7 +42,7 @@ router.get('/show/:id', function (req, res) {
       // res.send(response.data);
       // var body = response.data;
       var body = response.data;
-      console.log(response.data);
+      // console.log(response.data);
       res.json(body);
     })
     .catch(function (error) {
@@ -71,5 +67,26 @@ axios.get(`${scheduleUrl}` , options)
   // console.log(body)
 })
 });
+
+
+//search shows
+router.get('/search', function (req, res) {
+ 
+  const options = {
+      params: {
+        key: apiKey,
+        q: req.query
+      },
+      withCredentials: true
+    };
+axios.get(`${searchUrl}`, options ).then(function (response) {
+  // res.send(response.data);
+  var body = response.data;
+  res.json(body);
+  console.log(body)
+  // res.render('locations', {body: body})
+})
+});
+
 
 module.exports = router;
