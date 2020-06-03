@@ -1,10 +1,10 @@
 import React from 'react';
-import PeopleListItem from './PeopleListItem';
+import NetworkListItem from './NetworkListItem';
 import Schedule from './Schedule';
 // import './index.css';
 
-const PeopleList = (props) => {
-    console.log(props.people);
+const NetworkList = (props) => {
+    console.log(props.networks);
     return (
  
         <div className="series-father">
@@ -12,8 +12,8 @@ const PeopleList = (props) => {
           <ul className="series-list">
             {
            
-                    props.people.map(series => (
-                        <PeopleListItem  series={series} />
+                    props.networks.map(series => (
+                        <NetworkListItem key={series.id} series={series} />
                         ))
              
             }
@@ -22,4 +22,4 @@ const PeopleList = (props) => {
     );
 }
 
-export default PeopleList;
+export default NetworkList;

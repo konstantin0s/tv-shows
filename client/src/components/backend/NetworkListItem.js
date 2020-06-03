@@ -17,26 +17,19 @@ const PeopleListItem = (props) => {
 const replaceNullImg =  'https://source.unsplash.com/random';
     return (
         <div className="child-show">
-        <Card className={classes.root}>
-          <CardActionArea key={props.series.person.id}>
-
-                     <ReactFancyBox className={classes.media} thumbnail={(!!props.series.person.image)
-                      ?  props.series.person.image.medium :  replaceNullImg}
-                  image={(!!props.series.person.image) ?  props.series.person.image.medium :  replaceNullImg} />
+        <Card className={classes.root} key={props.series.network.id}>
+          <CardActionArea>
+ 
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
-                {props.series.person.name}
+                {props.series.network.name}
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
-             {props.series.person.type}
+             {props.series.network.country.name}
               </Typography>
             </CardContent>
           </CardActionArea>
           <CardActions>
-    
-            <Link className="linkx" id={props.series.person.id} to={`/person/${props.series.person.id}`}>
-                    See More..
-          </Link>
           
           </CardActions>
         </Card>

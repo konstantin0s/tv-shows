@@ -13,8 +13,6 @@ import EditIcon from '@material-ui/icons/Edit';
 import Loading from './Loading';
 import Rating from '@material-ui/lab/Rating';
 import Box from '@material-ui/core/Box';
-// import { confirmAlert } from 'react-confirm-alert'; // Import
-// import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import Moment from 'moment';
 // import Sharing from './Sharing';
 import ReactFancyBox from 'react-fancybox';
@@ -72,6 +70,7 @@ class OneShow extends Component {
     render() {
         const { show, isLoading } = this.state;
         console.log(show);
+        const replaceNullImg =  'https://source.unsplash.com/random';
 
         return (
             <div className="text-center">
@@ -82,8 +81,8 @@ class OneShow extends Component {
                   <CardActionArea>
                     <CardContent className="image-card">
 
-                      <ReactFancyBox thumbnail={show.image.medium ? show.image.medium : ''} 
-                      image={show.image.medium ? show.image.medium : ''} />
+                      <ReactFancyBox thumbnail={(!!show.image) ? show.image.medium : replaceNullImg} 
+                      image={(!!show.image) ? show.image.medium : replaceNullImg} />
                       <Typography gutterBottom variant="h5" component="h2">
                         Title:
                       </Typography>

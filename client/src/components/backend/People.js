@@ -7,7 +7,7 @@ class People extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            tvshows: [],
+            people: [],
             isLoading: true,
             searchText: [],
             term: []
@@ -20,14 +20,13 @@ class People extends Component {
             isLoading: true
         }));
 
-        // axios.get(`/search?q=${query}`)
         axios
-            .get(`http://api.tvmaze.com/search/people?q=${query}`)
+             .get(`http://api.tvmaze.com/search/people?q=${query}`)
             .then((res) => {
                 console.log(res);
-                const tvshows = res.data;
-                console.log(tvshows)
-                this.setState({tvshows: tvshows, isLoading: false});
+                const people = res.data;
+                console.log(people)
+                this.setState({people: people, isLoading: false});
             })
             .catch((err) => console.log(err));
     };
@@ -61,7 +60,7 @@ class People extends Component {
     render() {
 
         console.log(this.state.tvshows);
-        const {tvshows, searchText, isLoading} = this.state;
+        const {people, searchText, isLoading} = this.state;
 
         return (
             <React.Fragment>
@@ -83,7 +82,7 @@ class People extends Component {
 
                     {(isLoading)
                         ? <Loading/>
-                        : <PeopleList tvshows={tvshows}/>
+                        : <PeopleList people={people}/>
 }
                 </div>
             </React.Fragment>

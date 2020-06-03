@@ -26,10 +26,10 @@ import './css/header.css';
           <div className="nav-container">
                    <Link style={linkStyle} className="sub-link" to="/people">People</Link>
     
-                    <Link style={linkStyle} className="sub-link" to="/network">Network</Link>
+                    <Link style={linkStyle} className="sub-link" to="/network">Networks</Link>
                     <Link style={linkStyle} className="sub-link" to="/articles">Articles</Link>
-                    <Link style={linkStyle} className="sub-link" to="/people">People</Link>
-                    <Link style={linkStyle} className="sub-link" to="/channels">Web-Channels</Link>
+                    <Link style={linkStyle} className="sub-link" to="/people">Calendar</Link>
+                    <Link style={linkStyle} className="sub-link" to="/channels">Web Channels</Link>
           </div>
                 </nav>
             </header>
