@@ -17,7 +17,7 @@ import Moment from 'moment';
 // import Sharing from './Sharing';
 import ReactFancyBox from 'react-fancybox';
 import 'react-fancybox/lib/fancybox.css';
-// import './css/oneshow.css';
+import './css/oneshow.css';
 
 class OneShow extends Component {
     constructor(props) {
@@ -58,9 +58,9 @@ class OneShow extends Component {
     
         // for (let i = 0; i < result.length; i++) {
           return (
-            <Box key={Math.random() * 10 - 1} component="fieldset" mb={3} borderColor="transparent">
-              <Rating name="read-only" precision={0.5} value={parseInt(starx)} readOnly /> 
-          <h2>{starx}</h2>
+            <Box className="box-rate" key={Math.random() * 10 - 1} component="fieldset" mb={3} borderColor="transparent">
+              <Rating name="read-only" precision={0.5} value={parseInt(starx)} readOnly />  
+              <div className="star-rate">{starx}</div>
             </Box>
           );
         // }
@@ -73,7 +73,7 @@ class OneShow extends Component {
         const replaceNullImg =  'https://source.unsplash.com/random';
 
         return (
-            <div className="text-center">
+            <div className="text-center one-show">
               {isLoading ? (
                 <Loading />
               ) : (
@@ -84,28 +84,33 @@ class OneShow extends Component {
                       <ReactFancyBox thumbnail={(!!show.image) ? show.image.medium : replaceNullImg} 
                       image={(!!show.image) ? show.image.medium : replaceNullImg} />
                       <Typography gutterBottom variant="h5" component="h2">
-                        Title:
+                        Name: {" "}     {show.name}
                       </Typography>
-                      <Typography variant="body2" color="textSecondary" component="p">
-                        {show.name}
-                      </Typography>
-                    </CardContent>
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="h2">
-                       premiered {Moment(show.premiered).format('DD-MM-YYYY')}
-                      </Typography>
-                      <Typography variant="body2" color="textSecondary" component="p">
-                        {show.summary}
+                      <Typography gutterBottom variant="h5" component="h6">
+                       Scheduled on: {show.schedule.days} at {" "}
+                        {show.schedule.time}
+                       
                       </Typography>
                     </CardContent>
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="h2">
+                       Premiered: {Moment(show.premiered).format('DD-MM-YYYY')}
+                      </Typography>
+                      <Typography variant="body2" color="textSecondary" component="h6">
+                    {show.summary}
+                      </Typography>
+                    </CardContent>
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
                         {show.genres.map(genre => (
-                            <p key={Math.random() * 10 - 1}>{genre}</p>
+                            <h6 key={Math.random() * 10 - 1}>{genre}</h6>
                         ))}
                       </Typography>
                       <Typography variant="body2" color="textSecondary" component="p">
-                        {show.type}
+                       Type: {show.type}
+                      </Typography>
+                      <Typography variant="body2" color="textSecondary" component="p">
+                      Network:  {show.network.name}
                       </Typography>
                       <Typography>
                       Status: {show.status}
