@@ -37,7 +37,7 @@ class Schedule extends Component {
 
         const {schedule} = this.state;
         let tentyone = '21:00';
-        let tentytwo = '22:00'
+        let tentytwo = '21:59'
 
         let twenty = [];
         twenty = schedule.filter((res) => {
@@ -55,12 +55,12 @@ class Schedule extends Component {
     renderAt20 = () => {
 
         const {schedule} = this.state;
-        let endEighteen = '20:00';
-        let startTwenty = '21:00'
+        let startTwenty = '20:00';
+        let endTwenty = '20:59'
 
         let twenty = [];
          twenty = schedule.filter((res) => {
-            return (res.airtime >= endEighteen && res.airtime <= startTwenty)
+            return (res.airtime >= startTwenty && res.airtime <= endTwenty)
         })
   
      
@@ -74,12 +74,12 @@ class Schedule extends Component {
     renderAt19 = () => {
 
         const {schedule} = this.state;
-        let endEighteen = '19:00';
-        let startTwenty = '20:00'
+        let startNineteen = '19:00';
+        let startTwenty = '19:59'
 
         let twenty = [];
          twenty = schedule.filter((res) => {
-            return (res.airtime >= endEighteen && res.airtime <= startTwenty)
+            return (res.airtime >= startNineteen && res.airtime <= startTwenty)
         })
 
         if (twenty.length > 0) {
@@ -96,7 +96,6 @@ guessMonth = () => {
     let now = new Date( );
     let month = months[now.getMonth( )];
     return month;
-
 }
 
     render() {

@@ -2,3 +2,13 @@
     position: relative;
     margin-bottom: 300px;
 }
+
+
+.linkx {
+    font-size: 0.75em;
+    text-decoration: none;
+}
+
+.linkx:hover {
+    color: #df950c;
+}

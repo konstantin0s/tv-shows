@@ -12,6 +12,11 @@ li {
     box-sizing: border-box;
 }
 
+.the-series {
+    position: relative;
+    margin-bottom: 300px;
+}
+
 .series-list {
     box-sizing: border-box;
     position: relative;
@@ -55,6 +60,25 @@ li {
     margin-bottom: 1em;
     display: inline-block;
 }
+
+.child-show .MuiCardContent-root {
+    background: #1f4b47;
+}
+
+.MuiCardContent-root a,
+.MuiCardContent-root p {
+    color: #fff;
+}
+
+.linkx {
+    font-size: 0.75em;
+    text-decoration: none;
+}
+
+.linkx:hover {
+    color: #df950c;
+}
+
 
 .child-show img {
     width: 345px;

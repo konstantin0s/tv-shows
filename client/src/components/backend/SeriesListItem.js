@@ -23,7 +23,10 @@ const SeriesListItem = (props) => {
                   image={(!!props.series.show.image) ? props.series.show.image.medium : replaceNullImg} />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
+                {/* {props.series.show.name} */}
+                <Link className="linkx" id={props.series.show.id} to={`/show/${props.series.show.id}`}>
                 {props.series.show.name}
+          </Link>
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
              {props.series.show.type}
@@ -31,10 +34,7 @@ const SeriesListItem = (props) => {
             </CardContent>
           </CardActionArea>
           <CardActions>
-    
-            <Link className="linkx" id={props.series.show.id} to={`/show/${props.series.show.id}`}>
-                    See More..
-          </Link>
+  
           
           </CardActions>
         </Card>

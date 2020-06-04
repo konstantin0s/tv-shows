@@ -25,7 +25,10 @@ const replaceNullImg =  'https://source.unsplash.com/random';
                   image={(!!props.series.person.image) ?  props.series.person.image.medium :  replaceNullImg} />
             <CardContent>
               <Typography gutterBottom variant="h5" component="h2">
-                {props.series.person.name}
+              <Link className="linkx" id={props.series.person.id} to={`/person/${props.series.person.id}`}>
+                    {props.series.person.name}
+          </Link>
+          
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
              {props.series.person.type}
@@ -33,11 +36,7 @@ const replaceNullImg =  'https://source.unsplash.com/random';
             </CardContent>
           </CardActionArea>
           <CardActions>
-    
-            <Link className="linkx" id={props.series.person.id} to={`/person/${props.series.person.id}`}>
-                    See More..
-          </Link>
-          
+  
           </CardActions>
         </Card>
         </div>
