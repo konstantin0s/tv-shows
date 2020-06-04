@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Moment from 'moment';
+import ScheduleListItem from './ScheduleListItem';
 import axios from 'axios';
 import  './css/schedule.css';
 
@@ -7,7 +8,8 @@ class Schedule extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            schedule: []
+            schedule: [],
+            twenty: []
         };
     }
 
@@ -31,24 +33,42 @@ class Schedule extends Component {
         this.scheduleList();
     }
 
-    renderAt18 = () => {
+    renderAt21= () => {
+
         const {schedule} = this.state;
+        let tentyone = '21:00';
+        let tentytwo = '22:00'
 
-        let seventien = '17:00';
-        let endSeventien = '18:00';
-
-        let filtered = schedule.filter((res) => {
-            return (res.airtime >= seventien && res.airtime <= endSeventien)
+        let twenty = [];
+        twenty = schedule.filter((res) => {
+            return (res.airtime >= tentyone && res.airtime <= tentytwo)
         })
 
-        if (filtered.length !== 0) {
+        if (twenty.length > 0) {
             return (
-                <ul key={filtered[0].id}>
-                   <li> {filtered[0].airtime} {" "} {filtered[0].name}</li>
-                </ul>
+                <ScheduleListItem key={twenty.id} twenty={twenty}/>
             )
         }
+    }
 
+
+    renderAt20 = () => {
+
+        const {schedule} = this.state;
+        let endEighteen = '20:00';
+        let startTwenty = '21:00'
+
+        let twenty = [];
+         twenty = schedule.filter((res) => {
+            return (res.airtime >= endEighteen && res.airtime <= startTwenty)
+        })
+  
+     
+        if (twenty.length > 0) {
+            return (
+                <ScheduleListItem key={twenty.id} twenty={twenty}/>
+            )
+        }
     }
 
     renderAt19 = () => {
@@ -57,31 +77,31 @@ class Schedule extends Component {
         let endEighteen = '19:00';
         let startTwenty = '20:00'
 
-        let twenty = schedule.filter((res) => {
+        let twenty = [];
+         twenty = schedule.filter((res) => {
             return (res.airtime >= endEighteen && res.airtime <= startTwenty)
         })
 
-        if (twenty.length !== 0) {
+        if (twenty.length > 0) {
             return (
-                <ul key={twenty[0].id}>
-               <li>{twenty[0].airtime} {" "}  {twenty[0].name}  </li>
-            
-                </ul>
+                <ScheduleListItem key={twenty.id} twenty={twenty}/>
             )
         }
+      
     }
 
     render() {
 
         const {schedule} = this.state;
-        // console.log(schedule);
+        console.log(schedule);
 
         return (
             <div className="schedule">
                 <h1>Schedule for {Moment(schedule.airdate).format('MM-DD')}</h1>
-                <ul className="ul-schedule">
-                    <li>{this.renderAt18()}</li>
+                <ul>
                     <li>{this.renderAt19()}</li>
+                    <li>{this.renderAt20()}</li>
+                    <li>{this.renderAt21()}</li>
                 </ul>
             </div>
         )

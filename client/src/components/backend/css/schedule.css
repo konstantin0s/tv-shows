@@ -1,21 +1,46 @@
 .schedule {
     position: absolute;
     top: 440px;
-    right: 15px;
+    right: -126px;
+    width: 50%;
 }
 
-.schedule .ul-schedule {
+.schedule-child {
     position: relative;
+    top: 4px;
+    right: 6px;
+    width: 80%;
+    line-height: 20px;
 }
 
-.schedule .ul-schedule li:nth-child(even) {
+/* .schedule .ul-schedule {
+    position: relative;
+    width: 76%;
+    left: 94px;
+    word-break: break-word;
+} */
+
+.schedule-child .ul-schedule {
+    position: relative;
+    width: 76%;
+    left: 94px;
+    word-break: break-word;
+}
+
+
+.schedule-child .ul-schedule li {
+    list-style: none;
+    width: 80%;
+}
+
+.schedule-child .ul-schedule:nth-child(even) {
     background: #f1f1f1;
     position: relative;
     margin-bottom: 20px;
     margin-top: 20px;
     padding: 0.4em;
     width: 100%;
-    height: 2em;
+    height: 4em;
     color: #3C948B;
 }
 

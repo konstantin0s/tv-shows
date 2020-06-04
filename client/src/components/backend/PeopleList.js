@@ -13,7 +13,7 @@ const PeopleList = (props) => {
             {
            
                     props.people.map(series => (
-                        <PeopleListItem  series={series} />
+                        <PeopleListItem key={series.person.id}  series={series} />
                         ))
              
             }
