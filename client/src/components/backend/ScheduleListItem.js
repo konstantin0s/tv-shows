@@ -16,16 +16,30 @@ const ScheduleListItem = (props) => {
     console.log(props);
 
     return (
-        <div className="schedule-child">
+        <React.Fragment>
                   {
                         props.twenty.slice(0, 6).map((list) => (
-                              <ul className="ul-schedule" key={list.id}>
-                                  <li>{list.airtime} {" "}  {" "} {list.name}  </li>
-                                  <a href="#">{list.show.network.name} {" "}  {" "}
-                                   {list.show.name}  </a>
-                               </ul>
+                              <tr className="ul-schedule" key={list.id}>
+                                  <td>
+                                       {" "}  {" "} 
+                                   <span className="time">
+                                   {list.airtime}  
+                                   </span>
+                                   <span className="network">
+                                     {list.show.network.name} 
+                                     </span>
+                                       </td>
+                                  <td href="#">
+                                     <span className="showname">
+                                     {list.name.slice(0,15)}... 
+                                     </span> <br />
+                                 <span className="epname">
+                                 {list.show.name}  
+                                 </span>
+                                   </td>
+                               </tr>
                  ))}
-        </div>
+        </React.Fragment>
     )
 }
 

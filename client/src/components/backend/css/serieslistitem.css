@@ -18,7 +18,7 @@ li {
     width: 70%;
     top: 200px;
     display: grid;
-    grid-template-columns: repeat(4, 24.2%);
+    grid-template-columns: repeat(4, 23%);
     grid-gap: 10px;
     height: 100%;
 }
@@ -49,11 +49,6 @@ li {
     width: 70%;
 }
 
-/* .child-show:first-of-type,
-.child-show:nth-of-type(2),
-.child-show:nth-of-type(3) {
-    width: 70%;
-} */
 
 .child-show {
     position: relative;
@@ -65,11 +60,6 @@ li {
     width: 345px;
     height: 240px;
 }
-
-/* .s-gifs .box .image-box {
-    width: 65%;
-    height: 400px;
-} */
 
 .child-gif h3 {
     font-size: 1.3em;

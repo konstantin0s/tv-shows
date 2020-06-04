@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PeopleList from './PeopleList';
 import Loading from './Loading';
 import axios from 'axios';
+import './css/people.css'
 
 class People extends Component {
     constructor(props) {
@@ -64,7 +65,7 @@ class People extends Component {
 
         return (
             <React.Fragment>
-                <div className="the-series">
+                <div className="the-people">
 
                     <div className="contain-form">
                         <form className="search-form" onSubmit={this.handleSubmit}>

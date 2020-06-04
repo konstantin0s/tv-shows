@@ -96,14 +96,29 @@ class Schedule extends Component {
         console.log(schedule);
 
         return (
-            <div className="schedule">
+            <section className="schedule">
                 <h1>Schedule for {Moment(schedule.airdate).format('MM-DD')}</h1>
-                <ul>
-                    <li>{this.renderAt19()}</li>
-                    <li>{this.renderAt20()}</li>
-                    <li>{this.renderAt21()}</li>
-                </ul>
-            </div>
+          <table>
+          <tbody>
+                 
+                        <tr>
+                        <th colSpan="2" className="hour">19:00</th>
+                        </tr>
+                        {this.renderAt19()}
+              
+                <tr> 
+                       <th colSpan="2"  className="hour">20:00</th>
+                       </tr>
+                        {this.renderAt20()}
+                 
+                  <tr>
+                  <th colSpan="2"  className="hour">21:00</th>
+                  </tr>
+                        {this.renderAt21()}
+     
+                </tbody>
+          </table>
+            </section>
         )
     }
 }
