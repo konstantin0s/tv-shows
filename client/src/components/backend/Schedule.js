@@ -90,6 +90,15 @@ class Schedule extends Component {
       
     }
 
+guessMonth = () => {
+    const months = ['January','February','March','April','May', 'June','July','August','September',
+    'October','November','December'];
+    let now = new Date( );
+    let month = months[now.getMonth( )];
+    return month;
+
+}
+
     render() {
 
         const {schedule} = this.state;
@@ -97,7 +106,7 @@ class Schedule extends Component {
 
         return (
             <section className="schedule">
-                <h1>Schedule for {Moment(schedule.airdate).format('MM-DD')}</h1>
+                <h1>Schedule for {this.guessMonth()} {' '} {Moment(schedule.airdate).format('DD')}</h1>
           <table>
           <tbody>
                  
