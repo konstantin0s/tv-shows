@@ -7,9 +7,9 @@ const apiUrl = process.env.API_URL;
 const apiKey = process.env.API_KEY;
 
 // Example: http://api.tvmaze.com/search/shows?q=girls
-let scheduleUrl = 'http://api.tvmaze.com/schedule';
-let searchUrl = 'http://api.tvmaze.com/search';
-let personUrl = 'http://api.tvmaze.com/people';
+let scheduleUrl = 'https://api.tvmaze.com/schedule';
+let searchUrl = 'https://api.tvmaze.com/search';
+let personUrl = 'https://api.tvmaze.com/people';
 
 //get all shows
 router.get('/theshows', function (req, res) {
