@@ -5,6 +5,7 @@ import './css/header.css';
  class Header extends Component {
      
     render() {
+        const randomId = Math.floor(Math.random() *  9 + 1 )
         return (
 
             <React.Fragment>
@@ -28,7 +29,7 @@ import './css/header.css';
     
                     <Link style={linkStyle} className="sub-link" to="/network">Networks</Link>
                     <Link style={linkStyle} className="sub-link" to="/articles">Articles</Link>
-                    <Link style={linkStyle} className="sub-link" to="/people">Calendar</Link>
+                    <Link style={linkStyle} className="sub-link" to={`/shows/${randomId}/crew`}>Crew</Link>
                     <Link style={linkStyle} className="sub-link" to="/channels">Web Channels</Link>
           </div>
                 </nav>

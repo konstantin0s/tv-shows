@@ -48,6 +48,24 @@ router.get('/show/:id', function (req, res) {
     });
 });
 
+// //get tv shows by id
+router.get('/shows/:id/crew', function (req, res) {
+  const options = {
+    params: {
+      key: apiKey
+    },
+    withCredentials: true
+  }
+  axios.get(`${apiUrl}/${req.params.id}/crew`, options).then(function (response) {
+      var body = response.data;
+      res.json(body);
+    })
+    .catch(function (error) {
+      res.status(404).send();
+    });
+});
+
+
 //get today schedule
 router.get('/schedule', function (req, res, next) {
  

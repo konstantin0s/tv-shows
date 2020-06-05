@@ -71,6 +71,7 @@ class OneShow extends Component {
         const { show, isLoading } = this.state;
         console.log(show);
         const replaceNullImg =  'https://source.unsplash.com/random';
+        const randomId = Math.floor(Math.random() *  9 + 1 );
 
         return (
             <div className="text-center one-show">
@@ -115,8 +116,15 @@ class OneShow extends Component {
                       <Typography>
                       Status: {show.status}
                       </Typography>
+
+                      <Typography>
+                    <Link className="linkx" id={randomId} to={`/shows/${randomId}/crew`}>
+            Check Crew..
+          </Link>
+                    </Typography>
                     </CardContent>
                     <CardContent>{this.renderStars()}</CardContent>
+
                   </CardActionArea>
                   {/* <CardActions>
                     <Typography variant="body2" color="textSecondary" component="p">

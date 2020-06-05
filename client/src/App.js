@@ -4,6 +4,7 @@ import OneShow from './components/backend/OneShow';
 import Series from './components/backend/Series';
 import People from './components/backend/People';
 import OnePerson from './components/backend/OnePerson';
+import OneShowCrew from './components/backend/OneShowCrew';
 import Networks from './components/backend/Networks';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Header from './components/backend/Header';
@@ -30,6 +31,18 @@ export default class App extends Component {
                 return <OneShow id={id} />;
               }}
             />
+
+<Route
+              path="/shows/:id/crew"
+              render={(request) => {
+                const id = request.match.params.id;
+                const randomId = Math.floor(Math.random() *  9 + 1 );
+                console.log(id);
+                console.log(randomId);
+                return <OneShowCrew id={randomId} />;
+              }}
+            />
+
 
 <Route
               path="/person/:id"

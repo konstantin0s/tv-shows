@@ -65,10 +65,17 @@ li {
     background: #1f4b47;
 }
 
-.MuiCardContent-root a,
-.MuiCardContent-root p {
+.child-show .MuiCardContent-root p,
+.child-show .MuiCardContent-root a,
+.child-show .MuiCardContent-root h1,
+.child-show .MuiCardContent-root h2,
+.child-show .MuiCardContent-root h3,
+.child-show .MuiCardContent-root h4,
+.child-show .MuiCardContent-root h5,
+.child-show .MuiCardContent-root h6 {
     color: #fff;
 }
+
 
 .linkx {
     font-size: 0.75em;
