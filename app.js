@@ -15,11 +15,11 @@ app.use(cors({
 }));
 
   app.use(bodyParser.json());
-// app.use(cors({
-//   credentials: true,
-//   origin: ['https://figif.herokuapp.com']
-// })
-// );
+app.use(cors({
+  credentials: true,
+  origin: ['https://tv-amazing.herokuapp.com/']
+})
+);
 
 app.use(
   bodyParser.urlencoded({

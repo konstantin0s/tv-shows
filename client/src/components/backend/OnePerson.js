@@ -102,7 +102,7 @@ class OnePerson extends Component {
                             <CardActions>
 
                                 <div className="sharing">
-                                    <Sharing id={person._id}/>
+                                    <Sharing id={person.id}/>
                                 </div>
                             </CardActions>
 
