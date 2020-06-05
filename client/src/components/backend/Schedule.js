@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Moment from 'moment';
 import ScheduleListItem from './ScheduleListItem';
 import axios from 'axios';
-import  './css/schedule.css';
+import './css/schedule.css';
 
 class Schedule extends Component {
     constructor(props) {
@@ -33,7 +33,7 @@ class Schedule extends Component {
         this.scheduleList();
     }
 
-    renderAt21= () => {
+    renderAt21 = () => {
 
         const {schedule} = this.state;
         let tentyone = '21:00';
@@ -45,12 +45,9 @@ class Schedule extends Component {
         })
 
         if (twenty.length > 0) {
-            return (
-                <ScheduleListItem key={twenty.id} twenty={twenty}/>
-            )
+            return (<ScheduleListItem key={twenty.id} twenty={twenty}/>)
         }
     }
-
 
     renderAt20 = () => {
 
@@ -59,15 +56,12 @@ class Schedule extends Component {
         let endTwenty = '20:59'
 
         let twenty = [];
-         twenty = schedule.filter((res) => {
+        twenty = schedule.filter((res) => {
             return (res.airtime >= startTwenty && res.airtime <= endTwenty)
         })
-  
-     
+
         if (twenty.length > 0) {
-            return (
-                <ScheduleListItem key={twenty.id} twenty={twenty}/>
-            )
+            return (<ScheduleListItem key={twenty.id} twenty={twenty}/>)
         }
     }
 
@@ -78,54 +72,66 @@ class Schedule extends Component {
         let startTwenty = '19:59'
 
         let twenty = [];
-         twenty = schedule.filter((res) => {
+        twenty = schedule.filter((res) => {
             return (res.airtime >= startNineteen && res.airtime <= startTwenty)
         })
 
         if (twenty.length > 0) {
-            return (
-                <ScheduleListItem key={twenty.id} twenty={twenty}/>
-            )
+            return (<ScheduleListItem key={twenty.id} twenty={twenty}/>)
         }
-      
+
     }
 
-guessMonth = () => {
-    const months = ['January','February','March','April','May', 'June','July','August','September',
-    'October','November','December'];
-    let now = new Date( );
-    let month = months[now.getMonth( )];
-    return month;
-}
+    guessMonth = () => {
+        const months = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
+        ];
+        let now = new Date();
+        let month = months[now.getMonth()];
+        return month;
+    }
 
     render() {
 
         const {schedule} = this.state;
-        console.log(schedule);
+        // console.log(schedule);
 
         return (
             <section className="schedule">
-                <h1>Schedule for {this.guessMonth()} {' '} {Moment(schedule.airdate).format('DD')}</h1>
-          <table>
-          <tbody>
-                 
+                <h1>Schedule for {this.guessMonth()}
+                    {' '}
+                    {Moment(schedule.airdate).format('DD')}</h1>
+                <table>
+                    <tbody>
+
                         <tr>
-                        <th colSpan="2" className="hour">19:00</th>
+                            <th colSpan="2" className="hour">19:00</th>
                         </tr>
                         {this.renderAt19()}
-              
-                <tr> 
-                       <th colSpan="2"  className="hour">20:00</th>
-                       </tr>
+
+                        <tr>
+                            <th colSpan="2" className="hour">20:00</th>
+                        </tr>
                         {this.renderAt20()}
-                 
-                  <tr>
-                  <th colSpan="2"  className="hour">21:00</th>
-                  </tr>
+
+                        <tr>
+                            <th colSpan="2" className="hour">21:00</th>
+                        </tr>
                         {this.renderAt21()}
-     
-                </tbody>
-          </table>
+
+                    </tbody>
+                </table>
             </section>
         )
     }

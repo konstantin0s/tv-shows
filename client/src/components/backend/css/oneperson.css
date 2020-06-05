@@ -4,3 +4,12 @@
     height: 100%;
     margin-bottom: 180px;
 }
+
+.one-person .MuiCardContent-root p,
+.one-person .MuiCardContent-root a,
+.one-person .MuiCardContent-root h2,
+.one-person .MuiCardContent-root h3,
+.one-person .MuiCardContent-root h4,
+.one-person .MuiCardContent-root h5 {
+    color: #333;
+}

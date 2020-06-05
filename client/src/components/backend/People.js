@@ -22,21 +22,14 @@ class People extends Component {
         }));
 
         axios
-             .get(`http://api.tvmaze.com/search/people?q=${query}`)
+            .get(`http://api.tvmaze.com/search/people?q=${query}`)
             .then((res) => {
-                console.log(res);
                 const people = res.data;
-                console.log(people)
+                // console.log(people)
                 this.setState({people: people, isLoading: false});
             })
             .catch((err) => console.log(err));
     };
-
-    // tvList = () => {     this.setState((state) => ({ ...state, isLoading: true
-    // }));     axios       .get(`/theshows`)       .then((res) => {         const
-    // tvshows = res.data.slice(0, 20);         console.log(tvshows)
-    // this.setState({             tvshows: tvshows,           isLoading: false,
-    //     });       })       .catch((err) => console.log(err));   };
 
     componentDidMount = () => {
 
@@ -60,7 +53,7 @@ class People extends Component {
 
     render() {
 
-        console.log(this.state.tvshows);
+        // console.log(this.state.tvshows);
         const {people, searchText, isLoading} = this.state;
 
         return (

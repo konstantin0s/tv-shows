@@ -11,12 +11,22 @@ class Networks extends Component {
         };
     }
 
-
-    networkList = () => {     this.setState((state) => ({ ...state, isLoading: true
-    }));     axios       .get(`/theshows`)       .then((res) => {         const
-        networks = res.data.slice(0, 20);         console.log(networks)
-    this.setState({             networks: networks,           isLoading: false,
-        });       })       .catch((err) => console.log(err));   };
+    networkList = () => {
+        this.setState((state) => ({
+            ...state,
+            isLoading: true
+        }));
+        axios
+            .get(`/theshows`)
+            .then((res) => {
+                const networks = res
+                    .data
+                    .slice(0, 20);
+                // console.log(networks)
+                this.setState({networks: networks, isLoading: false});
+            })
+            .catch((err) => console.log(err));
+    };
 
     componentDidMount = () => {
 
@@ -26,14 +36,12 @@ class Networks extends Component {
 
     render() {
 
-        console.log(this.state.networks);
-        const {networks, searchText, isLoading} = this.state;
+        // console.log(this.state.networks);
+        const {networks, isLoading} = this.state;
 
         return (
             <React.Fragment>
                 <div className="the-series">
-
-
                     {(isLoading)
                         ? <Loading/>
                         : <NetworkList networks={networks}/>

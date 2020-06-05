@@ -27,19 +27,16 @@ export default class App extends Component {
               path="/show/:id"
               render={(request) => {
                 const id = request.match.params.id;
-                console.log(id);
-                return <OneShow id={id} />;
+                return <OneShow id={id} />
               }}
             />
 
 <Route
               path="/shows/:id/crew"
               render={(request) => {
-                const id = request.match.params.id;
+                // const id = request.match.params.id;
                 const randomId = Math.floor(Math.random() *  9 + 1 );
-                console.log(id);
-                console.log(randomId);
-                return <OneShowCrew id={randomId} />;
+                return <OneShowCrew id={randomId} />
               }}
             />
 
@@ -48,7 +45,6 @@ export default class App extends Component {
               path="/person/:id"
               render={(request) => {
                 const id = request.match.params.id;
-                console.log(id);
                 return <OnePerson id={id} />;
               }}
             />
