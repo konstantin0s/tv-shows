@@ -100,10 +100,6 @@ class OneShowCrew extends Component {
 
                             </CardActionArea>
                             <CardActions>
-
-                                <div className="sharing">
-                             <Sharing id={crewx.person.id} />
-                          </div>
                             </CardActions>
 
                         </Card>
