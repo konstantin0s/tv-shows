@@ -20,9 +20,10 @@ class Series extends Component {
             isLoading: true
         }));
 
+        let showUrl = 'https://api.tvmaze.com';
         // axios.get(`/search?q=${query}`)
         axios
-            .get(`http://api.tvmaze.com/search/shows?q=${query}`)
+            .get(`${showUrl}/search/shows?q=${query}`)
             .then((res) => {
                 const tvshows = res.data;
                 // console.log(tvshows)

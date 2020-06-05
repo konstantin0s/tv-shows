@@ -21,8 +21,10 @@ class People extends Component {
             isLoading: true
         }));
 
+        let peopleUrl = 'https://api.tvmaze.com';
+
         axios
-            .get(`http://api.tvmaze.com/search/people?q=${query}`)
+            .get(`${peopleUrl}/search/people?q=${query}`)
             .then((res) => {
                 const people = res.data;
                 // console.log(people)
