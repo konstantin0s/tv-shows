@@ -69,7 +69,7 @@ class People extends Component {
                                 value={searchText}
                                 autoComplete="true"
                                 ref={input => (this.query = input)}
-                                placeholder="Search show"
+                                placeholder="Search People..."
                                 aria-label="Search"/>
                         </form>
                     </div>
