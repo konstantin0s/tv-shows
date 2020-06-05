@@ -1,0 +1,31 @@
+.network {
+    position: relative;
+    margin-bottom: 1em;
+    display: inline-block;
+}
+
+.network .MuiCardContent-root {
+    background: #1f4b47;
+}
+
+.network .MuiCardContent-root p,
+.network .MuiCardContent-root a,
+.network .MuiCardContent-root h2,
+.network .MuiCardContent-root h3,
+.network .MuiCardContent-root h4,
+.network .MuiCardContent-root h5 {
+    color: #fff;
+}
+
+.network .MuiCardContent-root h1 {
+    color: #000;
+}
+
+.linkx {
+    font-size: 0.75em;
+    text-decoration: none;
+}
+
+.linkx:hover {
+    color: #df950c;
+}

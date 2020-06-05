@@ -102,7 +102,7 @@ class OneShow extends Component {
                       </Typography>
                     </CardContent>
                     <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
+                      <Typography gutterBottom variant="h5" className="genre" component="div">
                         {show.genres.map(genre => (
                             <h6 key={Math.random() * 10 - 1}>{genre}</h6>
                         ))}
@@ -116,12 +116,6 @@ class OneShow extends Component {
                       <Typography>
                       Status: {show.status}
                       </Typography>
-
-                      <Typography>
-                    <Link className="linkx" id={randomId} to={`/shows/${randomId}/crew`}>
-            Check Crew..
-          </Link>
-                    </Typography>
                     </CardContent>
                     <CardContent>{this.renderStars()}</CardContent>
 

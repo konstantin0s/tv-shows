@@ -4,3 +4,32 @@
     height: 100%;
     margin-bottom: 180px;
 }
+
+.one-show .MuiCardContent-root p,
+.one-show .MuiCardContent-root a,
+.one-show .MuiCardContent-root h1,
+.one-show .MuiCardContent-root h2,
+.one-show .MuiCardContent-root h3,
+.one-show .MuiCardContent-root h4,
+.one-show .MuiCardContent-root h5,
+.one-show .MuiCardContent-root h6 {
+    color: #333;
+}
+
+.star-rate {
+    position: relative;
+    top: -24px;
+    font-size: 1.4em;
+    left: 82px;
+}
+
+.genre {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.one-show .thumbnail img {
+    width: 60%;
+    height: 390px;
+}

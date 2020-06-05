@@ -68,5 +68,6 @@ td:first-child {
 .schedule h1 {
     font-size: 1.8em;
     position: relative;
-    left: -2em;
+    left: 0em;
+    color: #000;
 }

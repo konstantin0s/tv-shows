@@ -16,8 +16,7 @@ import './css/header.css';
                 <p>Binge Watching</p>
       </div>
                     <Link style={linkStyle} className="link" to="/">Shows</Link>
-                    <Link style={linkStyle} className="link" to="/showlist">Tv-Shows</Link>
-                    {/* <Link style={linkStyle} className="link" to="/collections">Collections</Link> */}
+
                 </nav>
 
                 </header>
@@ -28,9 +27,9 @@ import './css/header.css';
                    <Link style={linkStyle} className="sub-link" to="/people">People</Link>
     
                     <Link style={linkStyle} className="sub-link" to="/network">Networks</Link>
-                    <Link style={linkStyle} className="sub-link" to="/articles">Articles</Link>
+                    <a style={linkStyle} className="sub-link" target="_blank" href="https://www.tvmaze.com/articles">Articles</a>
                     <Link style={linkStyle} className="sub-link" to={`/shows/${randomId}/crew`}>Crew</Link>
-                    <Link style={linkStyle} className="sub-link" to="/channels">Web Channels</Link>
+                    <a style={linkStyle} className="sub-link" target="_blank" href="https://www.tvmaze.com/webchannels">Web Channels</a>
           </div>
                 </nav>
             </header>

@@ -6,7 +6,7 @@
 .one-crew .MuiCardContent-root h4,
 .one-crew .MuiCardContent-root h5,
 .one-crew .MuiCardContent-root h6 {
-    color: #333;
+    color: #fff;
 }
 
 .one-crew {
@@ -14,7 +14,7 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
     position: relative;
-    background-color: rgb(188, 190, 192);
+    top: 30px;
     margin-bottom: 150px;
     /* background: #1f4b47; */
 }
@@ -22,4 +22,9 @@
 .one-crew .thumbnail img {
     height: 320px;
     width: 100%;
+}
+
+.crew button {
+    background: #1f4b47;
+
 }

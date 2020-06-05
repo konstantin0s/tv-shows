@@ -1,0 +1,24 @@
+.network-list {
+    box-sizing: border-box;
+    position: relative;
+    width: 70%;
+    top: 100px;
+    display: grid;
+    grid-template-columns: repeat(6, 23%);
+    grid-gap: 10px;
+    height: 100%;
+}
+
+.network-father {
+    text-align: center;
+}
+
+.network-father .ad {
+    position: relative;
+    display: inline-block;
+    width: 70%;
+    height: 200px;
+    top: 20px;
+    background: url('https://source.unsplash.com/random') no-repeat center center;
+    background-size: cover;
+}
