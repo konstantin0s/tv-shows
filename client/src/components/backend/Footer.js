@@ -13,7 +13,7 @@ const Footer = () => {
             </p>
 
             <p className="text-center">
-                2020 Copyright © Tv-Amaze
+                {new Date().getFullYear()} Copyright © Tv-Amaze
             </p>
 
         </div>
