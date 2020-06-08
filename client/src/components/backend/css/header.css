@@ -138,6 +138,13 @@
         left: 0.3em;
         position: relative;
     }
+
+    .sub-link:hover {
+        padding: 0.7rem 1.3rem;
+        background: var(--primary-color);
+        color: #fff;
+    }
+
 }
 
 @media (min-width: 551px) and (max-width: 750px) {

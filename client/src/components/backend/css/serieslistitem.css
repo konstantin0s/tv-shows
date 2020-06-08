@@ -94,3 +94,72 @@ li {
 .child-gif h3 {
     font-size: 1.3em;
 }
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 300px) and (max-device-width: 579px) {
+    .series-father {
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+
+    .series-list {
+        display: inline-block;
+        width: 95%;
+        position: relative;
+        left: -1em;
+    }
+
+    .child-show {
+        position: relative;
+        margin-bottom: 1em;
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+/* personal style mobile*/
+@media only screen and (min-device-width: 550px) and (max-device-width: 776px) {
+    .series-list {
+        display: grid;
+        grid-template-columns: repeat(1, 55%);
+        width: 72%;
+        position: relative;
+        left: -1em;
+    }
+
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .series-list {
+        display: grid;
+        grid-template-columns: repeat(2, 40%);
+        position: relative;
+        left: -1em;
+    }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .series-list {
+        display: grid;
+        grid-template-columns: repeat(3, 30%);
+        position: relative;
+        left: -1em;
+    }
+}
+
+/*Portrait */
+@media only screen and (min-device-width: 1025px) and (max-device-width: 1112px) and (orientation: portrait) {
+    .series-list {
+        display: grid;
+        grid-template-columns: repeat(3, 30%);
+        position: relative;
+        left: -1em;
+    }
+}

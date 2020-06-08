@@ -69,3 +69,12 @@ html {
     perspective: 1000px;
     color: rgb(235, 82, 62);
 }
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 304px) and (max-device-width: 736px) {
+    /* .footer-bottom {
+        bottom: 50px;
+    } */
+}
