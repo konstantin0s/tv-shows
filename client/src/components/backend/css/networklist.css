@@ -22,3 +22,74 @@
     background: url('https://source.unsplash.com/random') no-repeat center center;
     background-size: cover;
 }
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 300px) and (max-device-width: 549px) {
+
+    .the-series {
+        text-align: center;
+    }
+
+    .network-father {
+        display: inline-block;
+    }
+
+    .network-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 90%;
+    }
+}
+
+/* personal style mobile*/
+@media only screen and (min-device-width: 550px) and (max-device-width: 776px) {
+    .the-series {
+        text-align: center;
+    }
+
+    .network-father {
+        display: inline-block;
+    }
+
+    .network-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 95%;
+    }
+
+}
+
+
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .the-series {
+        text-align: center;
+    }
+
+    .network-father {
+        display: inline-block;
+    }
+
+    .network-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 95%;
+    }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .the-series {
+        text-align: center;
+    }
+
+    .network-father {
+        display: inline-block;
+    }
+
+    .network-list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        width: 95%;
+    }
+}

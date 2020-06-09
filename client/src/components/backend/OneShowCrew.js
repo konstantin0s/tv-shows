@@ -52,7 +52,14 @@ class OneShowCrew extends Component {
         const replaceNullImg = 'https://source.unsplash.com/random';
 
         return (
+            
+<React.Fragment>
+<div className="ad">
+                {/* ad placeholder*/}
+            </div>
+
             <div className="text-center one-crew">
+
                 {isLoading
                     ? (<Loading/>)
                     : (crew.slice(0, 20).map((crewx) => (
@@ -105,6 +112,7 @@ class OneShowCrew extends Component {
                         </Card>
                     )))}
             </div>
+</React.Fragment>
         );
 
     }

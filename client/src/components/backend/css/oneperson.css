@@ -13,3 +13,13 @@
 .one-person .MuiCardContent-root h5 {
     color: #333;
 }
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 300px) and (max-width: 549px) {
+    .one-person {
+        position: relative;
+        width: 96%;
+        height: 100%;
+        margin-bottom: 180px;
+    }
+}

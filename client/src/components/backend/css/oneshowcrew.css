@@ -14,9 +14,18 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
     position: relative;
-    top: 30px;
+    top: 70px;
     margin-bottom: 150px;
-    /* background: #1f4b47; */
+}
+
+.ad {
+    position: relative;
+    display: inline-block;
+    width: 70%;
+    height: 200px;
+    top: 20px;
+    background: url('https://source.unsplash.com/random') no-repeat center center;
+    background-size: cover;
 }
 
 .one-crew .thumbnail img {
@@ -28,3 +37,58 @@
     background: #1f4b47;
 
 }
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 300px) and (max-width: 549px) {
+
+    .one-crew {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+
+/* personal style mobile*/
+@media only screen and (min-device-width: 550px) and (max-device-width: 776px) {
+    .one-crew {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ----------- iPad 3, 4 and Pro 9.7" ----------- */
+
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .one-crew {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {}
+
+/* ----------- iPad Pro 10.5" ----------- */
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen and (min-device-width: 834px) and (max-device-width: 834px) and (orientation: portrait) {}
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen and (min-device-width: 1112px) and (max-device-width: 1112px) and (orientation: landscape) {}
+
+/* ----------- iPad Pro 12.9" ----------- */
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) {}
+
+/* Landscape */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen and (min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape) {}
