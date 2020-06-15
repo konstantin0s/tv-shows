@@ -11,21 +11,25 @@ const PeopleListItem = (props) => {
     const classes = useStyles();
 
     // console.log(props);
+
     return (
         <div className="network">
-            <Card className={classes.root} key={props.series.network.id}>
-                <CardActionArea>
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            {props.series.network.name}
-                        </Typography>
-                        <Typography variant="body2" color="textSecondary" component="p">
-                            {props.series.network.country.name}
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-                <CardActions></CardActions>
-            </Card>
+       <Card className={classes.root} key={props.series.list.id}>
+            <CardActionArea>
+                   <CardContent>
+                       <Typography gutterBottom variant="h5" component="h2">
+                           {props.series.list.name}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        {props.series.list.country.name}
+                 </Typography>
+                 <Typography variant="body2" color="textSecondary" component="p">
+                        {props.series.list.country.timezone.slice(8)}
+                 </Typography>
+                </CardContent>
+         </CardActionArea>
+            <CardActions></CardActions>
+     </Card>
         </div>
     )
 }
